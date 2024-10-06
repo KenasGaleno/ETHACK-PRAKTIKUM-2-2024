@@ -50,6 +50,7 @@ ftp 10.15.42.245
 ls
 get list.xyz
 get readme.txt
+exit
 ```
 
 ![langkah 3](https://github.com/user-attachments/assets/ddb6a8dd-5e9e-4240-966f-124bf9380e0a)
@@ -64,7 +65,7 @@ grep -i "ethack" list.xyz
 
 ![langkah 4](https://github.com/user-attachments/assets/af24be7f-4219-40a3-8dd3-0d9b06e7c6e8)
 
-Masukkan password pada hashesntxt
+Masukkan password pada hashes.txt
 
 ```bash
 nano hashes.txt
