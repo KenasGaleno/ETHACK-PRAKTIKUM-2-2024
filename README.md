@@ -32,7 +32,7 @@ nmap -p- 10.15.42.245
 
 Pindai kerentanan FTP dengan Nmap:
 
-````bash
+```bash
 nmap --script=ftp-anon,ftp-vsftpd-backdoor -p21 10.15.42.245
 ```
 
