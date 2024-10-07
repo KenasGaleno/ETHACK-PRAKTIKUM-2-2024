@@ -85,7 +85,8 @@ cat readme.txt
 ![langkah 13](https://github.com/user-attachments/assets/729aab3a-0f7e-41c0-8db6-b2553c250bee)
 
 
-Gunakan wpscan untuk mendeteksi plugin WordPress yang terinstal:
+
+http://10.15.42.245:487
 
 ![langkah 6](https://github.com/user-attachments/assets/4b46ba37-e4cb-4191-a71a-ef75216d3920)
 
