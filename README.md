@@ -73,12 +73,21 @@ nano hashes.txt
 
 ![langkah 5](https://github.com/user-attachments/assets/70d6be57-2b69-45ee-a9f4-4fbfed67d89c)
 
+ssh ethack@10.15.42.245
+
+![langkah 12](https://github.com/user-attachments/assets/2ca41880-cebd-4436-aa96-bcf6416946d0)
+
+
+ls -l
+
+cat readme.txt
+
+![langkah 13](https://github.com/user-attachments/assets/729aab3a-0f7e-41c0-8db6-b2553c250bee)
 
 
 Gunakan wpscan untuk mendeteksi plugin WordPress yang terinstal:
 
 ![langkah 6](https://github.com/user-attachments/assets/4b46ba37-e4cb-4191-a71a-ef75216d3920)
-
 
 ```bash
 wpscan --url http://10.15.42.245:487 --enumerate p
